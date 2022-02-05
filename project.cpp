@@ -1,5 +1,6 @@
 #include<bits/stdc++.h>
 using namespace std;
+typedef long long ll;
 
 class angle{
     public:
@@ -90,12 +91,14 @@ int main(){
                         cout << multi(x, y) << '\n';
                     break;
             case 4: cout << "Enter the values for division in the format numerator first then denominator: ";
-                    T x, y;
+                    string x;
+                    ll y;
                     cin >> x >> y;
                     if(!y){
                         cout << "Denominator cannot be zero!\n";
                         break;
                     }
+                    
                     cout << x << " / " << y << " = " << div(x, y) << '\n';
                     break;
             case 5: cout << "Enter the values in the format x then y where x^y: ";
