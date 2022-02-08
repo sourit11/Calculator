@@ -1,8 +1,7 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-string div(string x, int y)
-{
+string div(string x, int y){
     string ans;
     int idx = 0;
     int temp = x[idx] - '0';

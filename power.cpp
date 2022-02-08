@@ -1,20 +1,21 @@
 #include<bits/stdc++.h>
+#include "project.hpp"
 using namespace std;
-#define mod 1000000007
 typedef long long ll;
 
-ll powerHelp(ll x, ll y){
+double powerHelp(double x, ll y){
     if(!y)
 		return 1;
-	ll res = powerHelp(x, y / 2);
-	ll ans = res * res;
-    ans %= mod;
+	double res = powerHelp(x, y / 2);
+	double ans = res * res;
 	if(!(y % 2))
 		return ans;
-	return (x * ans) % mod;    
+	return (x * ans);    
 }
 
-template <typename T>
-T power(T x, T y){
-    
+double power(double x, double y){
+	double p;
+	p = powerHelp(x, 100000 * y);
+	p += rootRes(x, 100000);
+	return p;
 }

@@ -54,7 +54,7 @@ string subRes(string x, string y, int neg = 0){
     }
     else if(k != -1){
         y.push_back('.');
-        for(int i = 0; i < x.length() - k; i++)
+        for(int i = 0; i < x.length() - k - 1; i++)
             y.push_back('0');
         if(y.length() > k){
             swap(x, y);
@@ -73,7 +73,7 @@ string subRes(string x, string y, int neg = 0){
     }
     else if(l != -1){
         x.push_back('.');
-        for(int i = 0; i < y.length() - l; i++)
+        for(int i = 0; i < y.length() - l - 1; i++)
             x.push_back('0');
         if(x.length() < k){
             swap(x, y);
@@ -167,10 +167,14 @@ angle subAngle(angle x, angle y){
     long long c = abs(a - b);
     if(a < b)
         c *= -1;
-    double x = (double)c / 3600;
-    ans.deg = floor(c);
+    double d = (double)c / 3600;
+    ans.deg = floor(d);
     ans.mins = floor((c - floor(c)) * 60);
     c = (c - floor(c)) * 60;
     ans.sec = ceil((c - floor(c)) * 60);
     return ans;
 }
+
+
+
+// check 5873872782287 378287278.2978229
