@@ -30,12 +30,19 @@ int main(){
                                 cout << "Enter the two values to be added: ";
                                 string x, y;
                                 cin >> x >> y;
-                                if(x[0] == '-' && y[0] == '-')
-                                    cout << x << " + " << y << " = -" << addRes(x.substr(1), y.substr(1)) << '\n';
-                                else if(x[0] == '-')
-                                    cout << x << " + " << y << " = " << subRes(y, x.substr(1), 0) << '\n';
-                                else if(y[0] == '-')
-                                    cout << x << " + " << y << " = " << subRes(x, y.substr(1), 0) << '\n';
+                                if(x[0] == '-' && y[0] == '-'){
+                                    x = x.substr(1);
+                                    y = y.substr(1);
+                                    cout << x << " + " << y << " = -" << addRes(x, y) << '\n';
+                                }
+                                else if(x[0] == '-'){
+                                    x = x.substr(1);
+                                    cout << x << " + " << y << " = " << subRes(y, x, 0) << '\n';
+                                }
+                                else if(y[0] == '-'){
+                                    y = y.substr(1);
+                                    cout << x << " + " << y << " = " << subRes(x, y, 0) << '\n';
+                                }
                                 else
                                     cout << x << " + " << y << " = " << addRes(x, y) << '\n';
                                 break;
@@ -60,12 +67,19 @@ int main(){
                                 cout << "Enter the two values to be subtracted: ";
                                 string x1, y1;
                                 cin >> x1 >> y1;
-                                if(x1[0] == '-' && y1[0] == '-')
-                                    cout << x1 << " - " << y1 << " = -" << subRes(y1.substr(1), x1.substr(1), 0) << '\n';
-                                else if(x1[0] == '-')
-                                    cout << x1 << " - " << y1 << " = -" << addRes(y1, x1.substr(1)) << '\n';
-                                else if(y1[0] == '-')
-                                    cout << x1 << " - " << y1 << " = " << addRes(x1, y1.substr(1)) << '\n';
+                                if(x1[0] == '-' && y1[0] == '-'){
+                                    y1 = y1.substr(1);
+                                    x1 = x1.substr(1);
+                                    cout << x1 << " - " << y1 << " = -" << subRes(y1, x1, 0) << '\n';
+                                }
+                                else if(x1[0] == '-'){
+                                    x1 = x1.substr(1);
+                                    cout << x1 << " - " << y1 << " = -" << addRes(y1, x1) << '\n';
+                                }
+                                else if(y1[0] == '-'){
+                                    y1 = y1.substr(1);
+                                    cout << x1 << " - " << y1 << " = " << addRes(x1, y1) << '\n';
+                                }
                                 else
                                     cout << x1 << " - " << y1 << " = " << subRes(x1, y1, 0) << '\n';
                                 break;
@@ -86,12 +100,19 @@ int main(){
                     string x2, y2;
                     cin >> x2 >> y2;
                     cout << x2 << " * " << y2 << " = " ;
-                    if(x2[0] == '-' && y2[0] == '-')
-                        cout << multi(y2.substr(1), x2.substr(1)) << '\n';
-                    else if(x2[0] == '-')
-                        cout << " -" << multi(y2, x2.substr(1)) << '\n';
-                    else if(y2[0] == '-')
-                        cout << " -" << multi(x2, y2.substr(1)) << '\n';
+                    if(x2[0] == '-' && y2[0] == '-'){
+                        x2 = x2.substr(1);
+                        y2 = y2.substr(1);
+                        cout << multi(y2, x2) << '\n';
+                    }
+                    else if(x2[0] == '-'){
+                        x2 = x2.substr(1);
+                        cout << " -" << multi(y2, x2) << '\n';
+                    }
+                    else if(y2[0] == '-'){
+                        y2 = y2.substr(1);
+                        cout << " -" << multi(x2, y2) << '\n';
+                    }
                     else
                         cout << multi(x2, y2) << '\n';
                     break;

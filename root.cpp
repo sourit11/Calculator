@@ -4,7 +4,7 @@
 using namespace std;
 typedef long long ll;
 
-double rootRes(double x, ll y){
+double rootRes(double &x, ll y){
     double low, high;
     double epsilon = 0.000001;
     if(x < 1){
@@ -16,8 +16,8 @@ double rootRes(double x, ll y){
         high = x;
     }
     double guess = ((double)low + high) / 2;
-    while (abs(power(guess, y) - x) >= epsilon){
-        if(power(guess, y) > x)
+    while (abs(powerHelp(guess, y) - x) >= epsilon){
+        if(powerHelp(guess, y) > x)
             high = guess;
         else
             low = guess;

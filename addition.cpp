@@ -8,7 +8,7 @@ class angle{
     int sec;
 };
 
-string addRes(string x, string y){
+string addRes(string &x, string &y){
     int k = -1, l = -1;
     for(int i = x.length() - 1; i >= 0; i--){
         if(x[i] == '.'){
@@ -124,7 +124,7 @@ string addRes(string x, string y){
     return ans;
 }
 
-angle addAngle(angle x, angle y){
+angle addAngle(angle &x, angle &y){
     angle ans;
     ans.sec = x.sec + y.sec;
     ans.mins = ans.sec >= 60 ? 1 : 0;

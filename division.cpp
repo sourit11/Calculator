@@ -1,7 +1,8 @@
 #include<bits/stdc++.h>
 using namespace std;
+typedef long long ll;
 
-string div(string x, int y){
+string div(string &x, ll &y){
     string ans;
     int idx = 0;
     int temp = x[idx] - '0';

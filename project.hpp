@@ -12,25 +12,25 @@ class angle{
     int sec;
 };
 
-string addRes(string, string);
+string addRes(string&, string&);
 
-angle addAngle(angle, angle);
+angle addAngle(angle&, angle&);
 
-string subRes(string, string, int);
+string subRes(string&, string&, int);
 
-angle subAngle(angle, angle);
+angle subAngle(angle&, angle&);
 
-string multi(string, string);
+string multi(string&, string&);
 
-string div(string, int);
+string div(string&, ll&);
 
-double powerHelp(double, ll);
+double powerHelp(double&, ll);
 
-double power(double, double);
+double power(double&, double&);
 
-double rootRes(double, ll);
+double rootRes(double&, ll);
 
-double logRes(double, double);
+double logRes(double&, double&);
 
 ll ncr(ll, ll);
 
